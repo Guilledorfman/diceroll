@@ -1,0 +1,72 @@
+body{
+    display: flex;
+}
+.cont{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 600px;
+}
+.cuadrado{
+    width: 50px;
+    height: 50px;
+    outline: 3px solid black;
+    margin: auto;
+    color: white;
+    font-size: 25px;
+    font-weight: 200;
+    text-align: center;
+}
+.cuadrado:hover{
+    opacity: .5;
+}
+
+.rojo{
+    background-color: red;
+}
+.naranja{
+    background-color: orange;
+}
+.azul{
+    background-color: blue;
+}
+.turquesa{
+    background-color: teal;
+}
+.marron{
+    background-color: brown;
+}
+.verde{
+    background-color: green;
+}
+
+#display{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: auto;
+    width: 1000px;
+    height: 600px;
+    outline: 3px solid darkblue;
+    background-color: indigo;
+}
+
+#roll{
+    width: 150px;
+    height: 600px;
+    background-color: brown;
+    font-size: 50px;
+}
+.dado{
+    transition: transform .4s ease;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.roll{
+    transform: rotate(360deg);
+}
+
+.crit{
+    outline: 10px dotted gold;  
+}
