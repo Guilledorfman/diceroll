@@ -1,8 +1,11 @@
 const cuadrados = document.querySelectorAll(".cuadrado");
 const display = document.getElementById('display');
 const roll = document.getElementById('roll');
+const resultH2 = document.getElementById('resultH2')
+
 let dadosArray = [];
 let resultDados = [];
+let resultado = 0;
 let rolling = false;
 
 cuadrados.forEach((e)=>{
@@ -11,10 +14,14 @@ cuadrados.forEach((e)=>{
         const content = e.innerHTML;
         const newCuadrado = document.createElement("div")
         newCuadrado.addEventListener('click', (e)=>{
-            display.removeChild(newCuadrado)
-            dadosElegidos = []
-            updateDados();
-            resultDados = []
+            if(rolling === false){
+                display.removeChild(newCuadrado)
+                dadosElegidos = []
+                updateDados();
+                resultDados = []
+
+            }
+
         })
         newCuadrado.classList.add(e.classList[0])
         newCuadrado.classList.add(e.classList[1])
@@ -41,6 +48,7 @@ roll.addEventListener('click',()=>{
         }
         setTimeout(()=>{
             showResult(dadosElegidos);
+            showTotal();
         },400)
     
     }
@@ -72,4 +80,14 @@ function rollAnimation(){
     dadosElegidos.forEach((e)=>{
         e.classList.toggle('roll')
     })
+}
+
+function showTotal(){
+    for(let i =0; i<resultDados.length;i++){
+        resultado +=resultDados[i];
+
+    }
+    resultH2.innerText = resultado;
+    resultado = 0;
+
 }

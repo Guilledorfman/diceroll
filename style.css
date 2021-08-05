@@ -51,7 +51,17 @@ body{
     outline: 3px solid darkblue;
     background-color: indigo;
 }
-
+#result{
+    display: flex;
+    margin: auto;
+    width: 200px;
+    height: 200px;
+    outline: 3px solid darkblue;
+    background-color: rgb(222, 205, 235);
+}
+#result h2{
+    margin: auto;
+}
 #roll{
     width: 150px;
     height: 600px;
