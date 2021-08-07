@@ -2,11 +2,17 @@ const cuadrados = document.querySelectorAll(".cuadrado");
 const display = document.getElementById('display');
 const roll = document.getElementById('roll');
 const resultH2 = document.getElementById('resultH2')
+const diceCont = document.getElementById('diceCont')
+const addDices = document.getElementById('addDices')
 
 let dadosArray = [];
 let resultDados = [];
 let resultado = 0;
 let rolling = false;
+
+addDices.addEventListener('click', ()=>{
+    diceCont.classList.toggle('hidden')
+})
 
 cuadrados.forEach((e)=>{
     e.addEventListener('click', ()=>{
