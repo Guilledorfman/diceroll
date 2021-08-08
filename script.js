@@ -17,7 +17,7 @@ addDices.addEventListener('click', ()=>{
 cuadrados.forEach((e)=>{
     e.addEventListener('click', ()=>{
         dadosArray.push(e.id)
-        const content = e.innerHTML;
+        const content = e.id;
         const newCuadrado = document.createElement("div")
         newCuadrado.addEventListener('click', (e)=>{
             if(rolling === false){
@@ -32,7 +32,7 @@ cuadrados.forEach((e)=>{
         newCuadrado.classList.add(e.classList[0])
         newCuadrado.classList.add(e.classList[1])
         newCuadrado.classList.add("dado")
-        newCuadrado.innerHTML = content;
+        newCuadrado.innerHTML = `1d${content}`;
         newCuadrado.value = content;
         display.appendChild(newCuadrado)
     })
@@ -81,6 +81,7 @@ function updateDados(){
         dadosArray.push(e.value)
     })
 }
+
 function rollAnimation(){
     const dadosElegidos = document.querySelectorAll('.dado');
     dadosElegidos.forEach((e)=>{
