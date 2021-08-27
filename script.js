@@ -11,7 +11,8 @@ let resultado = 0;
 let rolling = false;
 
 addDices.addEventListener('click', ()=>{
-    diceCont.classList.toggle('hidden')
+    diceCont.classList.toggle('visible')
+    console.log(diceCont.classList)
 })
 
 cuadrados.forEach((e)=>{
