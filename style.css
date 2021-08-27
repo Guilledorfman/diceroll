@@ -1,5 +1,6 @@
 body{
     height: 100vh;
+    width: 100vw;
     margin: 0;
     padding: 0;
     background: rgb(45,40,62);
@@ -10,43 +11,69 @@ body{
 }
 .content{
     height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     position: relative;
-    padding-left:250px;
-    padding-right: 250px;
 }
 nav{
     display: flex;
     align-items: center;
-    height: 10vh;
-    width: 100vw;
+    height: 20vh;
+    width: 100%;
     display: flex;
     justify-content: space-between;
 }
-.cont{
-    background: rgb(45,40,62,.9);
+#addDices{
+    /* position: absolute; */
     display: flex;
+    right: 20px;
+    width: 100%;
+    height: 60px;
+    z-index: 4815162342;
+    justify-content: center;
+    align-items: center;
+    top: 30px;
+    font-size: 2rem;
+    margin-top: auto;
+}
+.logo{
+    /* position: fixed; */
+    top: 0;
+    width: 10vw;
+    font-size: 2rem;
+    font-weight: 100;
+    color: #D1D7E0;
+    z-index: 481516;
+}
+.cont{
+    background: rgb(45,40,62,.6);
+    display: flex;
+    /* flex-direction: column; */
     margin: auto;
     justify-content: space-evenly;
     align-items: center;
     position: absolute;
-    height: 200px;
-    width: 70%;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 100%;
     z-index: 4815;
     transition: transform .4s ease;
-    top: -40vh;
-
-
+    top: calc(-30vh + 60px);
 }
 .cont.visible {
     display: flex;
     transition: transform .4s ease;
-    transform: translateY(40vh);
-
-
+    transform: translateY(-90vh);
 }
+.dices{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
 .cuadrado{
     width: 50px;
     height: 50px;
@@ -55,6 +82,27 @@ nav{
     font-size: 16px;
     font-weight: 200;
     text-align: center;
+}
+.dices>div{
+    width: 100px;
+    height: 100px;
+    margin-top: 50px;
+}
+.bar{
+    background-color: black;
+    width: 30px;
+    height: 5px;
+    /* margin:auto; */
+}
+.bar:first-child{
+    transform: translateX(5px) rotate(45deg);
+    
+}
+.bar:last-child{
+    transform:  translateX(-5px) rotate(-45deg);
+}
+.bar.close{
+    
 }
 .rojo{
     background-color: rgb(100, 42, 42);
@@ -76,7 +124,6 @@ nav{
 }
 
 #display{
-    padding: 10px;
     overflow-y: scroll;
     display: flex;
     align-items: flex-start;
@@ -116,6 +163,23 @@ nav{
 }
 
 @media (min-width: 1400px) {
+    .cont{
+        background: rgb(45,40,62,.9);
+        display: flex;
+        margin: auto;
+        justify-content: space-evenly;
+        align-items: center;
+        position: absolute;
+        height: 200px;
+        width: 70%;
+        z-index: 4815;
+        transition: transform .4s ease;
+        top: -40vh;
+    }
+    .content{
+        padding-left:250px;
+        padding-right: 250px;
+    }
     nav{
     }
     .logo{
