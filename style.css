@@ -1,28 +1,39 @@
+*{
+    outline: none;
+    border: none;
+    text-decoration: none;
+    list-style: none;
+    user-select: none;
+}
+
 body{
     height: 100vh;
     width: 100vw;
     margin: 0;
     padding: 0;
-    background: rgb(45,40,62);
+    background: rgba(99, 61, 226, 0.247);
+
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    list-style: none;
-    text-decoration: none;
     overflow: hidden;
 }
 .content{
+    background: radial-gradient(circle farthest-side, hsl(101, 37%, 43%), hsl(87, 87%, 13%));
     height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     position: relative;
+    max-width: 800px;
+    min-width: 300px;
+    margin: auto;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 4px 0px;
 }
 nav{
-    display: flex;
+    display: none;
     align-items: center;
     height: 20vh;
     width: 100%;
-    display: flex;
     justify-content: space-between;
 }
 #addDices{
@@ -48,9 +59,9 @@ nav{
     z-index: 481516;
 }
 .cont{
-    background: rgb(45,40,62,.6);
+    background: rgb(45,40,62,.9);
     display: flex;
-    /* flex-direction: column; */
+    flex-direction: column;
     margin: auto;
     justify-content: space-evenly;
     align-items: center;
@@ -60,7 +71,19 @@ nav{
     width: 100%;
     z-index: 4815;
     transition: transform .4s ease;
-    top: calc(-30vh + 60px);
+    /* top: calc(-30vh + 60px); */
+}
+
+.contact>img{
+    width: 50px;
+    height: 50px;
+}
+.contact-cont{
+    display: flex;
+    width: 100%;
+    height: 80px;
+    justify-content: space-around;
+    align-items: center;
 }
 .cont.visible {
     display: flex;
@@ -75,14 +98,21 @@ nav{
 }
 
 .cuadrado{
-    width: 50px;
-    height: 50px;
-    /* margin: auto; */
+    width: 70px;
+    height: 70px;
+    display: flex;
     color: white;
-    font-size: 16px;
-    font-weight: 200;
+    font-size: 1.5rem;
     text-align: center;
 }
+#display>.cuadrado>h4{
+    margin: auto;
+    font-size: 1rem;
+}
+.cuadrado h4{
+    margin: auto;
+}
+
 .dices>div{
     width: 100px;
     height: 100px;
@@ -92,51 +122,67 @@ nav{
     background-color: black;
     width: 30px;
     height: 5px;
-    /* margin:auto; */
+    transition: transform  .4s ease;
 }
 .bar:first-child{
-    transform: translateX(5px) rotate(45deg);
+    transform: translateX(6px) rotate(45deg);
     
 }
 .bar:last-child{
-    transform:  translateX(-5px) rotate(-45deg);
+    transform:  translateX(-6px) rotate(-45deg);
 }
-.bar.close{
-    
+.bar:first-child.close{
+    transform: translateX(6px) rotate(-45deg);
 }
-.rojo{
-    background-color: rgb(100, 42, 42);
+.bar:nth-child(2).close{
+    transform: translateX(-6px) rotate(45deg);
 }
-.naranja{
-    background-color: rgb(105, 82, 38);
+.cuatro{
+    background-image: url(/img/1d4.png);
+    background-size: 100%;
+
 }
-.azul{
-    background-color: rgb(32, 32, 107);
+.seis{
+    background-image: url(/img/1d6.png);
+    background-size: 100%;
 }
-.turquesa{
-    background-color: rgb(23, 83, 83);
+.ocho{
+    background-image: url(/img/1d8.png);
+    background-size: 100%;
 }
-.marron{
-    background-color: rgb(83, 32, 32);
+.diez{
+    background-image: url(/img/1d10.png);
+    background-size: 100%;
 }
-.verde{
-    background-color: rgb(11, 51, 11);
+.doce{
+    background-image: url(/img/1d12.png);
+    background-size: 100%;
+}
+.veinte{
+    background-image: url(/img/1d20.png);
+    background-size: 100%;
+}
+.cien{
+    background-image: url(/img/1d20.png);
+    background-size: 100%;
 }
 
 #display{
-    overflow-y: scroll;
+    overflow-y: auto;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
     width: 100%;
-    height: 50%;
-    background-color: rgb(0, 130, 39);
+    height: 70vh;
+    margin-top: 10vh;
 }
 #result{
     display: flex;
     width: 100%;
     height: 10%;
-    background-color: rgb(222, 205, 235);
+    background-color: #ffffff;
+    font-size: 2rem;
 }
 #result h2{
     margin: auto;
@@ -145,7 +191,8 @@ nav{
     width: 100%;
     height: 10%;
     background-color: brown;
-    font-size: 30px;
+    font-size: 2rem;
+    font-weight: 1000;
     z-index: 100;
 }
 .dado{
@@ -159,43 +206,12 @@ nav{
 }
 
 .crit{
-    outline: 2px dotted gold;  
+    border-radius: 50%;
+    background-color: rgb(255, 238, 0, .6);
+    box-shadow: 0 0 20px rgba(255, 230, 0, 0.9),
+                0 0 30px rgba(255, 230, 0, 0.8);
 }
 
 @media (min-width: 1400px) {
-    .cont{
-        background: rgb(45,40,62,.9);
-        display: flex;
-        margin: auto;
-        justify-content: space-evenly;
-        align-items: center;
-        position: absolute;
-        height: 200px;
-        width: 70%;
-        z-index: 4815;
-        transition: transform .4s ease;
-        top: -40vh;
-    }
-    .content{
-        padding-left:250px;
-        padding-right: 250px;
-    }
-    nav{
-    }
-    .logo{
-        margin-left: 80px;
-        top: 0;
-        width: 10vw;
-        font-size: 3rem;
-        font-weight: 100;
-        color: #D1D7E0;
-    }
-    #addDices{
-        position: fixed;
-        right: 20px;
-        width: 200px;
-        height: 200px;
-        margin-top: 32vh;
-        z-index: 4815162342;
-    }
+
 }

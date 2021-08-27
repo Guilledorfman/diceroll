@@ -4,6 +4,9 @@ const roll = document.getElementById('roll');
 const resultH2 = document.getElementById('resultH2')
 const diceCont = document.getElementById('diceCont')
 const addDices = document.getElementById('addDices')
+const bars = document.querySelectorAll('.bar')
+
+
 
 let dadosArray = [];
 let resultDados = [];
@@ -12,14 +15,19 @@ let rolling = false;
 
 addDices.addEventListener('click', ()=>{
     diceCont.classList.toggle('visible')
-    console.log(diceCont.classList)
+    bars.forEach((e)=>{
+        e.classList.toggle('close')
+    })
 })
 
 cuadrados.forEach((e)=>{
     e.addEventListener('click', ()=>{
         dadosArray.push(e.id)
         const content = e.id;
+
         const newCuadrado = document.createElement("div")
+        const newCuadradoText = document.createElement("h4")
+
         newCuadrado.addEventListener('click', (e)=>{
             if(rolling === false){
                 display.removeChild(newCuadrado)
@@ -30,10 +38,13 @@ cuadrados.forEach((e)=>{
             }
 
         })
+
         newCuadrado.classList.add(e.classList[0])
         newCuadrado.classList.add(e.classList[1])
         newCuadrado.classList.add("dado")
-        newCuadrado.innerHTML = `1d${content}`;
+
+        newCuadradoText.innerHTML = `1d${content}`;
+        newCuadrado.appendChild(newCuadradoText)
         newCuadrado.value = content;
         display.appendChild(newCuadrado)
     })
@@ -66,11 +77,10 @@ roll.addEventListener('click',()=>{
 function showResult(dados){
     for(let i =0; i<dados.length; i++){
         dados[i].classList.remove('crit')
-        dados[i].innerHTML = resultDados[i];
-        if(dados[i].value === dados[i].innerHTML){
+        dados[i].firstChild.innerHTML = resultDados[i];
+        if(dados[i].value === dados[i].firstChild.innerHTML){
             dados[i].classList.add('crit')
         }
-
     }
 }
 
