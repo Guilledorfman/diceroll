@@ -5,13 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
     <title>Document</title>
 </head>
 <body>
-    <nav>
-        <!-- <a href="https://guilledorfman.github.io/portfolio/" ><h1 class="logo">GD</h1></a> -->
-    </nav>
     <div class="content">
+        <div id="help" class="help">
+            <div class="help-cont">
+                <span id="close-info" class="material-icons">close</span>
+                <p>Click on the top tab to select dices, close the tab and click ROLL.<br>Click on the dices to delete them.
+                </p>
+            </div>
+        </div>
         <div id="diceCont" class="cont">
             <div class="contact-cont">
                 <a href="https://github.com/Guilledorfman/diceroll" class="contact"><img src="./img/github.png" alt=""></a>
@@ -32,7 +39,7 @@
             </button>
         </div>
         <div id="display">
-    
+            <button id="info" class="info"><span class="material-icons">help_outline</span></button>
         </div>
         <div id="result"><h2 id="resultH2">0</h2></div>
         <button id="roll">ROLL</button>

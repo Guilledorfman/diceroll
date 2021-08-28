@@ -5,8 +5,24 @@ const resultH2 = document.getElementById('resultH2')
 const diceCont = document.getElementById('diceCont')
 const addDices = document.getElementById('addDices')
 const bars = document.querySelectorAll('.bar')
+const body = document.querySelector('body')
+const getInfo = document.getElementById('info')
+const closeInfo = document.getElementById('close-info')
 
 
+getInfo.addEventListener('click', ()=>{
+    document.getElementById('help').classList.toggle('visible')
+})
+closeInfo.addEventListener('click', ()=>{
+    document.getElementById('help').classList.toggle('visible')
+})
+
+
+
+diceCont.classList.toggle('visible')
+bars.forEach((e)=>{
+    e.classList.toggle('close')
+})
 
 let dadosArray = [];
 let resultDados = [];
