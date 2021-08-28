@@ -138,28 +138,28 @@ nav{
     transform: translateX(-6px) rotate(45deg);
 }
 .cuatro{
-    background-image: url(/img/1d4.png);
+    background-image: url(./img/1d4.png);
     background-size: 100%;
 
 }
 .seis{
-    background-image: url(/img/1d6.png);
+    background-image: url(./img/1d6.png);
     background-size: 100%;
 }
 .ocho{
-    background-image: url(/img/1d8.png);
+    background-image: url(./img/1d8.png);
     background-size: 100%;
 }
 .diez{
-    background-image: url(/img/1d10.png);
+    background-image: url(./img/1d10.png);
     background-size: 100%;
 }
 .doce{
-    background-image: url(/img/1d12.png);
+    background-image: url(./img/1d12.png);
     background-size: 100%;
 }
 .veinte{
-    background-image: url(/img/1d20.png);
+    background-image: url(./img/1d20.png);
     background-size: 100%;
 }
 .cien{
