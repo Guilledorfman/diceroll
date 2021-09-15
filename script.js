@@ -125,3 +125,5 @@ function showTotal(){
     resultado = 0;
 
 }
+
+
